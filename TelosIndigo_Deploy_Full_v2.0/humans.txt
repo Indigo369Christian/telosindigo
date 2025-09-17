@@ -1,0 +1,12 @@
+/* TEAM */
+Creator: Christian Kersten (TelosIndigo)
+Contact: kersten786@gmail.com
+From: Brandenburg an der Havel, Germany
+
+/* SITE */
+Last update: 2025-09-17
+Standards: HTML5, CSS3, ES2020, PWA
+Tools: Apple (iPad/iCloud/GoodNotes), ChatGPT
+
+/* THANKS */
+Danke an alle Unterstützer:innen und die TelosIndigo Community.
