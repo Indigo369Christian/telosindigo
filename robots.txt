@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://indigo369christian.github.io/telosindigo/sitemap.xml
