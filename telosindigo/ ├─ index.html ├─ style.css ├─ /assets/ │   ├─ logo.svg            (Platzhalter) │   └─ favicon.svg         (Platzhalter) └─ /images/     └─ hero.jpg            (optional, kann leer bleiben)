@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IndigoTelos – Ordnung. Struktur. Zukunft.</title>
+  <meta name="description" content="IndigoTelos: Systeme & Vorlagen für klare Workflows – Schule, Business, Finanzen.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="IndigoTelos">
+  <meta property="og:description" content="Strukturierte Workflows & Vorlagen – Matrix Blau/Grau.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://indigo369christian.github.io/telosindigo/">
+  <meta property="og:image" content="images/hero.jpg">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#top">
+    <img src="assets/logo.svg" alt="IndigoTelos Logo">
+    <span>IndigoTelos</span>
+  </a>
+  <nav>
+    <a href="#angebot">Angebot</a>
+    <a href="#system">System</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero__content">
+      <h1>Ordnung schafft Fokus.</h1>
+      <p>Templates, Workflows & Coaching – damit Schule, Business und Alltag sauber laufen.</p>
+      <div class="cta">
+        <a class="btn btn--primary" href="#angebot">Jetzt ansehen</a>
+        <a class="btn" href="docs/IndigoTelos_OnePager.pdf">One-Pager (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="angebot" class="cards">
+    <h2>Angebot</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>GoodNotes-Sets</h3>
+        <p>Seriöse A4/A5-Hefte (Cornell, Lernpläne, Checklisten) im Matrix-Look.</p>
+        <a class="link" href="#">Demo ansehen</a>
+      </article>
+      <article class="card">
+        <h3>Finder-System</h3>
+        <p>Automatisierte Ablage auf macOS (zsh/Brew/Shortcuts) – sauber & versioniert.</p>
+        <a class="link" href="#">Readme</a>
+      </article>
+      <article class="card">
+        <h3>Coaching</h3>
+        <p>1:1 Struktur-Sprints – von Chaos zu Klarheit in 7 Tagen.</p>
+        <a class="link" href="#kontakt">Anfragen</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="system" class="split">
+    <div>
+      <h2>Das System</h2>
+      <ul class="tick">
+        <li>Klare Ordner + Dateinamen (YYYYMMDD_…)</li>
+        <li>Einheitliche Vorlagen (Schule/Business)</li>
+        <li>Automationen für wiederkehrende Routinen</li>
+      </ul>
+      <a class="btn btn--ghost" href="https://github.com/indigo369christian/telosindigo" target="_blank" rel="noopener">Quellcode</a>
+    </div>
+    <div class="panel"></div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <h2>Kontakt</h2>
+    <p>Interesse? Schreib mir kurz dein Ziel & Zeitraum.</p>
+    <ul>
+      <li>E-Mail: <a href="mailto:indigo369@proton.me">indigo369@proton.me</a></li>
+      <li>GitHub: <a href="https://github.com/indigo369christian" target="_blank" rel="noopener">indigo369christian</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© <span id="y"></span> IndigoTelos • Struktur • Effizienz • Professionalität</p>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+:root{
+  --bg:#0b0f14;
+  --bg-2:#0f141b;
+  --ink:#e6f0ff;
+  --muted:#9fb0c3;
+  --indigo:#4c7bff;      /* Matrix-Blau */
+  --cyan:#21d4ff;        /* Akzent */
+  --grid:#1a2230;
+  --card:#111722;
+  --ok:#7ee787;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,system-ui;
+  color:var(--ink); background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(33,212,255,.08), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+}
+
+a{color:var(--cyan); text-decoration:none}
+a:hover{opacity:.9}
+h1,h2,h3{margin:.2rem 0 1rem}
+h1{font-size:clamp(2rem,4vw,3rem)}
+h2{font-size:clamp(1.4rem,3vw,2rem)}
+h3{font-size:1.125rem}
+
+.nav{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.8rem 1.2rem; background:rgba(11,15,20,.7); backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid var(--grid);
+}
+.nav .brand{display:flex; gap:.6rem; align-items:center; font-weight:700}
+.nav img{height:24px}
+.nav nav a{margin-left:1rem; color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+
+.hero{
+  min-height:56vh; display:grid; place-items:center;
+  background-image:
+    linear-gradient(rgba(12,18,28,.6), rgba(12,18,28,.6)),
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(76,123,255,.06) 30px 31px);
+  border-bottom:1px solid var(--grid);
+}
+.hero__content{max-width:960px; padding:4rem 1.2rem; text-align:center}
+.cta{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:1rem}
+
+.btn{
+  display:inline-block; padding:.75rem 1.1rem; border:1px solid var(--grid);
+  border-radius:.6rem; color:var(--ink); background:transparent
+}
+.btn--primary{background:linear-gradient(90deg,var(--indigo),var(--cyan)); border:none}
+.btn--ghost{background:#0c121c}
+
+.cards{padding:3rem 1.2rem; max-width:1100px; margin:0 auto}
+.cards .grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{
+  padding:1.2rem; background:var(--card); border:1px solid var(--grid); border-radius:.8rem;
+  box-shadow:0 0 0 1px rgba(76,123,255,.06) inset
+}
+.link{display:inline-block; margin-top:.6rem}
+
+.split{display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center;
+  padding:3rem 1.2rem; max-width:1100px; margin:0 auto}
+.split .panel{
+  min-height:240px; border-radius:.8rem; border:1px solid var(--grid);
+  background-image: radial-gradient(circle at 30% 20%, rgba(33,212,255,.25), transparent 40%),
+                    radial-gradient(circle at 80% 60%, rgba(76,123,255,.25), transparent 35%),
+                    linear-gradient(180deg,#0c121c,#0a0f15);
+}
+
+.tick{list-style:none; padding-left:0}
+.tick li{margin:.4rem 0; padding-left:1.4rem; position:relative; color:var(--muted)}
+.tick li::before{content:"✔"; color:var(--ok); position:absolute; left:0}
+
+.contact{padding:3rem 1.2rem; max-width:800px; margin:0 auto}
+.footer{border-top:1px solid var(--grid); color:var(--muted); text-align:center; padding:1.4rem}
+
+@media (max-width:900px){ .split{grid-template-columns:1fr} }
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c7bff"/>
+      <stop offset="1" stop-color="#21d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="32" fill="#0b0f14"/>
+  <path d="M64 176L128 48l64 128h-24l-40-82-40 82H64z" fill="url(#g)"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0b0f14"/>
+  <path d="M16 48L32 16l16 32h-8l-8-16-8 16h-8z" fill="#4c7bff"/>
+</svg>
