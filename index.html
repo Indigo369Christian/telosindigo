@@ -1,29 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <base href="/telosindigo/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TelosIndigo – BrandOS</title>
-  <meta name="description" content="Ordnung schaffen. Präsenz starten. Marke in KI einlernen.">
+  <meta name="description" content="Ordnung schaffen. Präsenz stärken. IndigoTelos – Matrix Blau/Grau.">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
   <meta property="og:title" content="TelosIndigo – BrandOS">
-  <meta property="og:description" content="Ordnung schaffen. Präsenz starten. Marke in KI einlernen.">
-  <meta property="og:image" content="TelosIndigo_OG_1200x630.png">
+  <meta property="og:description" content="Struktur • Effizienz • Professionalität">
+  <meta property="og:image" content="TelosIndigo_Key-Visual_1600x900.png">
+  <style>
+    :root{
+      --bg:#0b0f14;--bg2:#0f141b;--grid:#182230;
+      --ink:#e6f0ff;--muted:#9fb0c3;--indigo:#4c7bff;--cyan:#21d4ff;--ok:#7ee787
+    }
+    *{box-sizing:border-box} body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,Inter,system-ui;
+      color:var(--ink);background:linear-gradient(180deg,var(--bg),var(--bg2))}
+    a{color:#21d4ff;text-decoration:none} a:hover{opacity:.9}
+    header{position:sticky;top:0;z-index:10;display:flex;gap:1rem;align-items:center;justify-content:space-between;
+      padding:.8rem 1.2rem;background:rgba(11,15,20,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--grid)}
+    header .brand{font-weight:700;letter-spacing:.2px}
+    .hero{min-height:46vh;display:grid;place-items:center;text-align:center;border-bottom:1px solid var(--grid);
+      background-image:linear-gradient(rgba(12,18,28,.6),rgba(12,18,28,.6)),
+        repeating-linear-gradient(0deg,transparent 0 30px,rgba(76,123,255,.06) 30px 31px)}
+    h1{font-size:clamp(2rem,4vw,3rem);margin:.2rem 0 .6rem}
+    .cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.7rem 1.1rem;border:1px solid var(--grid);border-radius:.6rem;color:var(--ink)}
+    .btn--p{border:none;background:linear-gradient(90deg,var(--indigo),var(--cyan))}
+    .wrap{max-width:1100px;margin:0 auto;padding:2rem 1.2rem}
+    .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .card{background:#111722;border:1px solid var(--grid);border-radius:.8rem;overflow:hidden}
+    .card img{display:block;width:100%;height:160px;object-fit:cover;background:#0c121c}
+    .cap{padding:.6rem .8rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--grid)}
+    footer{border-top:1px solid var(--grid);color:var(--muted);text-align:center;padding:1.2rem}
+  </style>
 </head>
 <body>
-  <h1>TelosIndigo – BrandOS</h1>
-  <p>Ordnung schaffen. Präsenz starten. Marke in KI einlernen.</p>
-  <p>Diese Seite ist online via GitHub Pages.</p>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(console.error);
-      });
-    }
-  </script>
+<header>
+  <div class="brand">IndigoTelos</div>
+  <nav>
+    <a href="#gallery">Galerie</a>
+    &nbsp;•&nbsp;
+    <a href="https://github.com/indigo369christian/telosindigo" target="_blank" rel="noopener">Repo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Ordnung schaffen. Präsenz stärken.</h1>
+    <p>Matrix-Blau/Grau – BrandOS für Schule, Business & Finanzen.</p>
+    <div class="cta">
+      <a class="btn btn--p" href="#gallery">Zur Galerie</a>
+      <a class="btn" href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</section>
+
+<main id="gallery" class="wrap">
+  <h2>Visuals</h2>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  © <span id="y"></span> IndigoTelos • Struktur • Effizienz • Professionalität
+</footer>
+
+<script>
+  // PWA beibehalten
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+  }
+  // Jahr
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // >>> Galerie: Nenne hier deine Dateien (genaue Namen!)
+  const images = [
+    "TelosIndigo_Key-Visual_1600x900.png",
+    "Telos-Indigo_OG_1200x630.png",
+    "TelosIndigo_Tile_01.png",
+    "TelosIndigo_Tile_02.png",
+    "TelosIndigo_Tile_03.png",
+    "TelosIndigo_Tile_04.png",
+    "TelosIndigo_Tile_05.png",
+    "TelosIndigo_Tile_06.png"
+  ];
+
+  const grid = document.getElementById('grid');
+  images.forEach(src => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <a href="${src}" target="_blank" rel="noopener">
+        <img loading="lazy" src="${src}" alt="${src.replace(/\.[^.]+$/, '').replace(/[_-]/g,' ')}">
+      </a>
+      <div class="cap">${src}</div>`;
+    grid.appendChild(card);
+  });
+</script>
 </body>
 </html>
